@@ -1,4 +1,4 @@
-package com.hafidznrg.newsapp.newsdetail
+package com.hafidznrg.newsapp.view
 
 import android.content.Intent
 import android.net.Uri
@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.hafidznrg.newsapp.R
-import com.hafidznrg.newsapp.databinding.MainFragmentBinding
 import com.hafidznrg.newsapp.databinding.NewsDetailFragmentBinding
 import com.hafidznrg.newsapp.model.Article
 import java.time.ZonedDateTime
@@ -24,7 +22,7 @@ class NewsDetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         this._binding = NewsDetailFragmentBinding.inflate(
             inflater,
             container,
@@ -36,14 +34,14 @@ class NewsDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.backButton.setOnClickListener() {
+        binding.backButton.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
         val article = arguments?.getParcelable<Article>(ARTICLE_KEY)
 
-        binding.seeMoreButton.setOnClickListener() {
-            val browserIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse(article?.url))
+        binding.seeMoreButton.setOnClickListener {
+            val browserIntent= Intent(Intent.ACTION_VIEW, Uri.parse(article?.url))
             context!!.startActivity(browserIntent)
         }
 
@@ -62,7 +60,7 @@ class NewsDetailFragment : Fragment() {
     }
 
     companion object {
-        val ARTICLE_KEY = "article"
+        const val ARTICLE_KEY = "article"
 
         fun newInstance(article: Article): NewsDetailFragment {
             val fragment = NewsDetailFragment()

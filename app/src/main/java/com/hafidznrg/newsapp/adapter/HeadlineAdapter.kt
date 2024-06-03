@@ -1,7 +1,5 @@
 package com.hafidznrg.newsapp.adapter
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hafidznrg.newsapp.R
 import com.hafidznrg.newsapp.model.Article
-import com.hafidznrg.newsapp.newsdetail.NewsDetailFragment
+import com.hafidznrg.newsapp.view.NewsDetailFragment
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 

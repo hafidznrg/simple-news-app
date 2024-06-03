@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.hafidznrg.newsapp.R
 import com.hafidznrg.newsapp.adapter.HeadlineAdapter
 import com.hafidznrg.newsapp.adapter.NewsAdapter
 import com.hafidznrg.newsapp.databinding.MainFragmentBinding
@@ -26,14 +24,11 @@ class MainFragment : Fragment() {
     private lateinit var headlinesAdapter: HeadlineAdapter
     private lateinit var newsAdapter: NewsAdapter
 
-    private lateinit var headlineRecyclerView : RecyclerView
-    private lateinit var newsRecyclerView: RecyclerView
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         this._binding = MainFragmentBinding.inflate(
             inflater,
             container,
