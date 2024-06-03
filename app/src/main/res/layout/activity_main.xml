@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginHorizontal="16dp"
-    tools:context=".MainActivity">
+    android:paddingHorizontal="16dp"
+    tools:context=".view.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/headlines"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
@@ -26,7 +26,7 @@
         tools:listitem="@layout/item_headline" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/all_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
