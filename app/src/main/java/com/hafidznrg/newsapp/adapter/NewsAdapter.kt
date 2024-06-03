@@ -32,6 +32,7 @@ class NewsAdapter(private val newsList: List<Article>) :
         holder.newsDescriptionTextView.text = article.description
         Glide.with(holder.newsImageView.context)
             .load(article.urlToImage)
+            .placeholder(R.mipmap.ic_image_not_found)
             .into(holder.newsImageView)
 
         val context = holder.newsImageView.context
